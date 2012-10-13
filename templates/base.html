@@ -1,0 +1,60 @@
+<html>
+<body>
+<table>
+<tr><td align = "center" colspan = "2"><img height = "40px" src="/static/user.png"/> </td></tr>
+<tr><td align="center" colspan ="2">praveen</td></tr>
+<tr><td align = "center" colspan = "2"><img src="/static/stage1_con.png"/> </td></tr>
+{% for candidate, leg, sponsorer  in  listofallunderleftcandidate %}
+
+
+{% if leg == 'L' %}
+<tr><td align = "left" colspan = "2"><img width = "30px" src="/static/user.png"/> </td></tr>
+ <tr><td align = "center" width="150px">{{ candidate }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<table>
+<tr><td align = "center" colspan = "2"><img width = "100px" src="/static/stage1_con.png"/> </td></tr>
+
+
+{% for candidate, leg, sponsorer  in  temprightlist %}
+
+{% if leg == 'L' %}
+<tr><td align = "left" colspan = "2"><img width = "20px" src="/static/user.png"/> </td></tr>
+ <tr><td >{{ candidate }} </td> 
+{% else %}
+ <td align = "right" width="200px">{{ candidate }} </td> </tr>
+{% endif %}
+{% endfor %}
+
+</table> </td> 
+{% else %}
+ <td align="right" width="220px" valign ="top"> {{ candidate }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<table>
+<tr><td align = "center" colspan = "2"><img width = "100px" src="/static/stage1_con.png"/> </td></tr>
+
+{% for candidate, leg, sponsorer  in  templeftlist %}
+
+{% if leg == 'L' %}
+ <tr><td ><img width = "20px" src="/static/user.png"/><br>{{ candidate }} </td> 
+{% else %}
+ <td align = "right" width="200px"> <img width = "20px" src="/static/user.png"/><br>{{ candidate }} </td> </tr>
+{% endif %}
+{% endfor %}
+
+</table>
+ </td> </tr>
+{% endif %}
+
+{% endfor %}
+
+</table>
+ Number of pairs {{ numberofpairs }} <br>
+ Total number of childs {{ totalnumberofchilds }} <br>
+<b>List of childs</b> <br>
+{% for candidate, leg, sponsorer  in  listofallunderleftcandidate %}
+{{ candidate }}
+{% endfor %}
+ Number of left pairs {{ numberofleftpairs }} <br>
+ Total number of childs towards left {{ totalnumberofchildstowardsleft }} <br>
+ Number of right pairs {{ numberofrightpairs }} <br>
+ Total number of childs towards right{{ totalnumberofchildstowardsright }} <br>
+</body>
+</html>
